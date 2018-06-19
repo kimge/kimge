@@ -5,30 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ex.html</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="../lib/jquery-1.12.4.min.js"></script>
-  <script src="ex.js"></script>
 </head>
 <body>
-
+  <img id="imgID" src="wannaone1.jpg"/>
   <script>
-  var i = 0;
+  var i = 0;  // assign
   var imgIndex = [];
   //src만 불러오고 싶지만 방법을 모르겠음;
-  imgIndex[0] = 'img1.png';
-  imgIndex[1] = 'img2.png';
-  imgIndex[2] = 'img3.png';
-  imgIndex[3] = 'img4.png';
+  imgIndex[0] = 'wannaone1.jpg';
+  imgIndex[1] = 'wannaone2.jpg';
+  imgIndex[2] = 'wannaone3.jpg';
+  imgIndex[3] = 'wannaone4.jpg';
 
+  // j로 한 이유, 위의 i 변수와의 충돌을 막기 위해
+  for (var j = 0; j < imgIndex.length; j++) {
+    console.log(imgIndex[j]);
+  }
+
+  // 슬라이드 기능인데, <img> tag를 write 하고 있음
+  // 사실 <img> tag는 하나로 두고 src만 바뀌면 되는 게 답임.
   function slide() {
-    document.write('<img src=' + imgIndex[i] + '>');
+    // <img> tag를 가져옴
+    var imgTag = document.getElementById("imgID");
+    // console.log(imgTag);
+
+    // src attribute를 가져옴
+    var srcValue = imgTag.getAttribute("src");
+    //console.log(srcValue);
+
+    var srcName = imgIndex[i];
+    // console.log(srcName);
+
+    imgTag.setAttribute("src", srcName);
+
     if (i < imgIndex.length - 1) {
       i++;
     } else {
       i = 0;
     }
-    setInterval('slide()', 3000);
   }
+
+  setInterval('slide()', 3000);
   </script>
 </body>
 </html>
