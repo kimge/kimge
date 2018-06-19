@@ -1,0 +1,50 @@
+
+<div class="wrap">
+  <img class="img img1" src="img1.png" alt="">
+  <img class="img img2" src="img2.png" alt="">
+  <img class="img img3" src="img3.png" alt="">
+  <img class="img img4" src="img4.png" alt="">
+</div>
+
+<style>
+div {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+  .wrap {
+    position: relative;
+    width: 97px;
+    height: 97px;
+    overflow: hidden;
+  }
+  .img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+<script>
+  var i = 0;
+  var images = [];
+
+  images[0] = getElementsByClassName('img1') ;
+  images[1] = getElementsByClassName('img2') ;
+  images[2] = getElementsByClassName('img3') ;
+  images[3] = getElementsByClassName('img4') ;
+
+  function slide() {
+    if (i < images.length - 1) {
+      images[i].style.display='block';
+      //images[].not(images[i]).style.left="-1000%";
+      //
+      i++
+    } else {
+      i = 0;
+    }
+    setInterval('slide()', 3000);
+  }
+
+
+</script>

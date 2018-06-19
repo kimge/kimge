@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ex.html</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="../lib/jquery-1.12.4.min.js"></script>
+  <script src="ex.js"></script>
+</head>
+<body>
+
+  <script>
+  var i = 0;
+  var imgIndex = [];
+  //src만 불러오고 싶지만 방법을 모르겠음;
+  imgIndex[0] = 'img1.png';
+  imgIndex[1] = 'img2.png';
+  imgIndex[2] = 'img3.png';
+  imgIndex[3] = 'img4.png';
+
+  function slide() {
+    document.write('<img src=' + imgIndex[i] + '>');
+    if (i < imgIndex.length - 1) {
+      i++;
+    } else {
+      i = 0;
+    }
+    setInterval('slide()', 3000);
+  }
+  </script>
+</body>
+</html>
