@@ -74,9 +74,8 @@
   imgIndex[2] = document.getElementById('img3');
   imgIndex[3] = document.getElementById('img4');
   //console.log(imgIndex[0]);
-  var slideIndex = 0;
 
-  setInterval(() => {
+  let slideFunction = () => {
     // swap
     let temp = imgIndex[0].className;
     imgIndex[0].className = imgIndex[1].className;
@@ -102,6 +101,8 @@
     // img4.class == next
 
     // ...
-  }, 1000);
+  };
+
+  setInterval(slideFunction, 1000);
 
 </script>
