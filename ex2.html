@@ -27,10 +27,10 @@
 </div>
 
 <div class="wrap">
-  <img class="" id="imgID img1" src="wannaone1.jpg" alt="">
-  <img class="" id="imgID img2" src="wannaone2.jpg" alt="">
-  <img class="" id="imgID img3" src="wannaone3.jpg" alt="">
-  <img class="" id="imgID img4" src="wannaone4.jpg" alt="">
+  <img class="" id="img1" src="wannaone1.jpg" alt="">
+  <img class="" id="img2" src="wannaone2.jpg" alt="">
+  <img class="" id="img3" src="wannaone3.jpg" alt="">
+  <img class="" id="img4" src="wannaone4.jpg" alt="">
 </div>
 <style>
 
@@ -45,25 +45,28 @@
     width: 300px;
     height: 300px;
     float: left;
-  }
-  .prev {
+}
+
+.prev {
     left: 0;
-  }
-  .on {
+}
+
+.on {
     left: 300px;
-  }
-  .next {
+}
+
+.next {
     left: 600px;
-  }
-  .hide {
+}
+
+.hide {
     left: -1000%;
-  }
+}
 
 
 </style>
 <script>
   var i = 0;
-  var imgID = document.getElementById('imgID');
 
   var imgIndex = [];
   imgIndex[0] = document.getElementById('img1');
@@ -72,16 +75,24 @@
   imgIndex[3] = document.getElementById('img4');
   //console.log(imgIndex[0]);
   var slideIndex = 0;
-  function slide() {
-    for(i = 0; i < imgIndex.length - 1; i++) {
-      imgIndex[i].classList.add('on');
-      //console.log(imgIndex[0]);
+//   function slide() {
+//     for(i = 0; i < imgIndex.length - 1; i++) {
+//       //imgIndex[i].classList.add('on');
+//       //console.log(imgIndex[0]);
+//
+//       //imgIndex[slideIndex-1].className = imgIndex[i].className.replace("", "prev");
+//       //imgIndex[slideIndex+1].className = imgIndex[i].className.replace("", "next");
+//       slideIndex++;
+//
+//     }
+// }
 
-      imgIndex[slideIndex-1].className = imgIndex[i].className.replace("", "prev");
-      imgIndex[slideIndex+1].className = imgIndex[i].className.replace("", "next");
-      slideIndex++;
+  setInterval(() => {
+    console.log(slideIndex++);
+
+    if (slideIndex >= imgIndex.length) {
+      slideIndex = 0;
     }
-}
-  setInterval('slide()', 3000);
+  }, 1000);
 
 </script>
