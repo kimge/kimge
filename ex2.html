@@ -27,10 +27,10 @@
 </div>
 
 <div class="wrap">
-  <img class="" id="img1" src="wannaone1.jpg" alt="">
-  <img class="" id="img2" src="wannaone2.jpg" alt="">
-  <img class="" id="img3" src="wannaone3.jpg" alt="">
-  <img class="" id="img4" src="wannaone4.jpg" alt="">
+  <img class="on" id="img1" src="wannaone1.jpg" alt="">
+  <img class="next" id="img2" src="wannaone2.jpg" alt="">
+  <img class="hide" id="img3" src="wannaone3.jpg" alt="">
+  <img class="prev" id="img4" src="wannaone4.jpg" alt="">
 </div>
 <style>
 
@@ -75,24 +75,33 @@
   imgIndex[3] = document.getElementById('img4');
   //console.log(imgIndex[0]);
   var slideIndex = 0;
-//   function slide() {
-//     for(i = 0; i < imgIndex.length - 1; i++) {
-//       //imgIndex[i].classList.add('on');
-//       //console.log(imgIndex[0]);
-//
-//       //imgIndex[slideIndex-1].className = imgIndex[i].className.replace("", "prev");
-//       //imgIndex[slideIndex+1].className = imgIndex[i].className.replace("", "next");
-//       slideIndex++;
-//
-//     }
-// }
 
   setInterval(() => {
-    console.log(slideIndex++);
+    // swap
+    let temp = imgIndex[0].className;
+    imgIndex[0].className = imgIndex[1].className;
+    imgIndex[1].className = imgIndex[2].className;
+    imgIndex[2].className = imgIndex[3].className;
+    imgIndex[3].className = temp;
 
-    if (slideIndex >= imgIndex.length) {
-      slideIndex = 0;
-    }
+    // img1.class == on
+    // img2.class == next
+    // img3.class == hide
+    // img4.class == prev
+
+    // slideIndex == 0
+    // img1.class == next
+    // img2.class == hide
+    // img3.class == prev
+    // img4.class == on
+
+    // slideIndex == 1
+    // img1.class == hide
+    // img2.class == prev
+    // img3.class == on
+    // img4.class == next
+
+    // ...
   }, 1000);
 
 </script>
