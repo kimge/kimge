@@ -68,12 +68,16 @@
 <script>
   var i = 0;
 
-  var imgIndex = [];
-  imgIndex[0] = document.getElementById('img1');
-  imgIndex[1] = document.getElementById('img2');
-  imgIndex[2] = document.getElementById('img3');
-  imgIndex[3] = document.getElementById('img4');
+  var imgIndex = [
+    document.getElementById('img1'),
+    document.getElementById('img2'),
+    document.getElementById('img3'),
+    document.getElementById('img4')
+  ];
   //console.log(imgIndex[0]);
+
+  let classList = ['on', 'next', 'hide', 'prev'];
+  console.log(classList);
 
   let slideFunction = () => {
     // swap
