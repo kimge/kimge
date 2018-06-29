@@ -80,12 +80,28 @@
   console.log(classList);
 
   let slideFunction = () => {
-    // swap
-    let temp = imgIndex[0].className;
-    imgIndex[0].className = imgIndex[1].className;
-    imgIndex[1].className = imgIndex[2].className;
-    imgIndex[2].className = imgIndex[3].className;
-    imgIndex[3].className = temp;
+    let temp = classList[0];
+    imgIndex[0].classList = classList[1];
+    imgIndex[1].classList = classList[2];
+    imgIndex[2].classList = classList[3];
+    imgIndex[3].classList = temp;
+// classList 인덱스별 클래스가 지정되어 있기 때문에 불가능 -> 다른 방법을 찾아보자
+
+
+
+    // swap slide direction : left -> right
+    // let temp = imgIndex[0].className;
+    // imgIndex[0].className = imgIndex[1].className;
+    // imgIndex[1].className = imgIndex[2].className;
+    // imgIndex[2].className = imgIndex[3].className;
+    // imgIndex[3].className = temp;
+
+    // swap slide direction : right -> left
+   //  let temp = imgIndex[0].className;
+  //  imgIndex[0].className = imgIndex[3].className;
+  //  imgIndex[3].className = imgIndex[2].className;
+  //  imgIndex[2].className = imgIndex[1].className;
+  //  imgIndex[1].className = temp;
 
     // img1.class == on
     // img2.class == next
