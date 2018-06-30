@@ -9,6 +9,7 @@
 #issue > .inner {
 	position: relative;
   height: 480px;
+	width: auto;
 }
 #issue > button {
 	position: absolute;
@@ -65,14 +66,28 @@
 	background: url(images/btn_play.png) no-repeat 50% 50%;
 }
 .slide_container {
+	position: relative;
 	width: auto;
 }
 .slide_container .slide {
 	float: left;
   width: 873px;
   height: 480px;
-	overflow: hidden;
+	position:absolute;
+	top: 0;
 	transition: transform 0.5s ease;
+}
+.slide_container .slide.on {
+	left: 0;
+}
+.slide_container .slide.prev {
+	left: -873px;
+}
+.slide_container .slide.next {
+	left: 873px;
+}
+.slide_container .slide.hide {
+	left: -1000%;
 }
 .slide_container .slide .inner img {
 	width: 100%;
