@@ -125,9 +125,17 @@
 #focus {
 	position: absolute;
 	left: 50%;
+	top: 0;
+	width: 315px;
+	height: 873px;
+	background: #fff;
+	margin-left: 279px;
+	padding: 0 24px;
+}
+#focus .focus_box {
+	position: absolute;
 	top: 28px;
 	width: 267px;
-	margin-left: 303px;
 }
 #focus h2 {
 	font-size: 20px;
