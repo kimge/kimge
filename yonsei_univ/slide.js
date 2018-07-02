@@ -34,21 +34,38 @@ let slide = () => {
 };
 */
 
-var slideClass = {
-  "first":"slide prev",
-  "second":"slide on",
-  "third":"slide next",
-  "fourth":"slide hide"
-}
-
-setInterval(slideClass.show = function() {
+setInterval(function() {
     let temp = slideIndex[0].className;
-    //console.log(slideClass.first);
-    slideIndex[0].className = slideClass.fourth;
-    slideIndex[1].className = slideClass.second;
-    slideIndex[2].className = slideClass.third;
+    //console.log(slideIndex[0].className);
+    slideIndex[0].className = slideIndex[1].className
+    slideIndex[1].className = slideIndex[2].className
+    slideIndex[2].className = slideIndex[3].className
     slideIndex[3].className = temp;
-      //console.log(slideIndex[3].className);
-}, 1000);
+}, 6000);
 
-//첫번째와 마지막 슬라이드의 클래스네임이 겹침.
+//div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
+//그 인덱스의 pagination > li에 클래스 on을 붙여준다.
+
+var pagination = document.getElementsByClassName('group')[6];
+//console.log(pagination);
+
+var child = [];
+child[0] = pagination.childNodes.item(0);
+child[1] = pagination.childNodes.item(1);
+child[2] = pagination.childNodes.item(2);
+child[3] = pagination.childNodes.item(3);
+//console.log(child[0]);
+
+//html 파일에서 <ul>과 <li>, </li>와 </ul> 사이의 공백을 인식해서
+//#text 라는 자식노드가 자동 생성되는데 공백을 없애지 않고도 없앨 수 있는 방법이 있나?
+function toggleClass(element, className) {
+  var i = 0;
+  if ( slideIndex[i].className === 'slide on' ) {
+    child[i].className('on');
+  };
+};
+/*
+1. 클래스네임이 on 인 슬라이드인덱스를 찾아서
+2. 인덱스 [i]를 변수에 담고
+3. child[i]의 클래스 on add
+*/

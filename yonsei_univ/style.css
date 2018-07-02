@@ -25,14 +25,16 @@
 	margin-right: -646px;
 }
 .pagination {
+	display: block;
 	position: absolute;
 	z-index: 10;
 	overflow: hidden;
 }
-#issue .inner > .pagination {
+#issue .pagination {
 	left: 50%;
   top: 434px;
   margin-left: -557px;
+	padding-left: 25px
 }
 .pagination ul {
 	overflow: hidden;
@@ -50,6 +52,9 @@
 	background: url(images/bul_issue.png) no-repeat 50% 50%;
 	width:12px;
 	height: 12px;
+}
+.pagination ul li.on a {
+	background: url(images/bul_issue_on.png) no-repeat 50% 50%;
 }
 #issue .pagination button {
 	display: none;
@@ -75,7 +80,8 @@
   height: 480px;
 	position:absolute;
 	top: 0;
-	transition: transform 0.5s ease;
+	transition:transform 5s ease-out;
+
 }
 .slide_container .slide.on {
 	left: 0;
@@ -102,11 +108,7 @@
   color: #fff;
 	background: url(images/bg_issue.png) no-repeat;
 }
-.slide_container div.slide.active .txt {
-	display: block;
-}
 .slide_container .slide .txt strong {
-	display: block;
 	margin-bottom: 5px;
 	font-size: 20px;
 	color: #fff;
@@ -120,6 +122,22 @@
 	margin-bottom: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.slide_container .slide.on .txt {
+	display: block;
+}
+.slide_container .seethrough {
+	display: block;
+	position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.7;
+}
+.slide_container .slide.on .seethrough {
+	display: none;
 }
 /* focus */
 #focus {
