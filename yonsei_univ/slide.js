@@ -1,11 +1,11 @@
 var i = 0;
-var slideIndex = [];
-
-slideIndex[0] = document.getElementById('slide1');
-slideIndex[1] = document.getElementById('slide2');
-slideIndex[2] = document.getElementById('slide3');
-slideIndex[3] = document.getElementById('slide4');
-//console.log(slideIndex[1]);
+//var slideIndex = [];
+//
+// slideIndex[0] = document.getElementById('slide1');
+// slideIndex[1] = document.getElementById('slide2');
+// slideIndex[2] = document.getElementById('slide3');
+// slideIndex[3] = document.getElementById('slide4');
+// console.log(slideIndex[1]);
 
 /*
 null 값이 나오는 이유? 값이 없기 때문
@@ -14,14 +14,22 @@ null 값이 나오는 이유? 값이 없기 때문
 <script src="slide.js"></script> 왜?
 null도 나옴 왜?
 
-요렇게 하면 문법오류 뜸 왜ㅐㅐ애ㅐㅐㅐ???????
+--- feel
+미팅 기록 참고
+*/
+
+// 요렇게 하면 문법오류 뜸
+// ---- feel
+// 잘 되는 듯?
 var slideIndex = [
   document.getElementById('slide1'),
   document.getElementById('slide2'),
   document.getElementById('slide3'),
   document.getElementById('slide4')
 ];
-*/
+//console.log(slideIndex[1]);
+
+var slideCircleGroup = [];
 
 /*
 let slide = () => {
@@ -41,24 +49,56 @@ setInterval(function() {
     slideIndex[1].className = slideIndex[2].className
     slideIndex[2].className = slideIndex[3].className
     slideIndex[3].className = temp;
-}, 6000);
+
+    let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+    //console.log(findSlide);
+    //console.log(slideIndex.indexOf(findSlide));
+    let findIndex = slideIndex.indexOf(findSlide);
+
+    let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
+    //console.log(findCircle);
+
+    // 바로 직전 circle을 비우고
+    findCircle.className = '';
+    // 현재 slide의 circle의 style을 채운다
+    slideCircleGroup[findIndex].className = 'on';
+
+}, 1000);
 
 //div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
 //그 인덱스의 pagination > li에 클래스 on을 붙여준다.
 
-var pagination = document.getElementsByClassName('group')[6];
+//var pagination = document.getElementsByClassName('group')[6];
 //console.log(pagination);
 
-var child = [];
-child[0] = pagination.childNodes.item(0);
-child[1] = pagination.childNodes.item(1);
-child[2] = pagination.childNodes.item(2);
-child[3] = pagination.childNodes.item(3);
-//console.log(child[0]);
+// id를 부여해서 id로 가져오는 방법으로
+// id name은 직관적으로
+var pagination = document.getElementById('slideGroup');
+//console.log(pagination);
+
+//console.log(pagination.childNodes);
+
+
+
+
+// child[0] = pagination.childNodes.item(0);
+// child[1] = pagination.childNodes.item(1);
+// child[2] = pagination.childNodes.item(2);
+// child[3] = pagination.childNodes.item(3);
+
+// li tag 찾기
+pagination.childNodes.forEach(node => {
+  if (node.nodeName.includes('LI'))
+  {
+    slideCircleGroup.push(node);
+    //console.log(node);
+  }
+});
+
+//console.log(child);
 
 //html 파일에서 <ul>과 <li>, </li>와 </ul> 사이의 공백을 인식해서
 //#text 라는 자식노드가 자동 생성되는데 공백을 없애지 않고도 없앨 수 있는 방법이 있나?
-
 
 function pagination() {
   var i = 0;

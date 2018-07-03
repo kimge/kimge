@@ -11,7 +11,7 @@
 
   <script src="../lib/jquery-1.12.4.min.js"></script>
   <script src="common.js"></script>
-  <script src="slide.js"></script>
+  <script src="slide.js" defer></script>
 
 </head>
 <body>
@@ -357,7 +357,12 @@
         </button>
         <div class="inner">
           <div class="pagination group">
-            <ul class="group"><li data-index="0"><a href="#"></a></li><li data-index="1"><a href="#"></a></li><li data-index="2"><a href="#"></a></li><li data-index="3"><a href="#"></a></li></ul>
+            <ul id="slideGroup" class="group">
+              <li class="on"><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
             <button type="button" class="pause">자동 넘김 멈춤</button>
             <button type="button" class="play">자동 넘김</button>
           </div>
@@ -405,7 +410,7 @@
           </div>
 
         </div>
-        <script src="slide.js"></script>
+        <!-- <script src="slide.js"></script> -->
       </div>
       <div id="focus">
         <div class="focus_box">
