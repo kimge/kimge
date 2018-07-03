@@ -14,7 +14,7 @@ null 값이 나오는 이유? 값이 없기 때문
 <script src="slide.js"></script> 왜?
 null도 나옴 왜?
 
-요렇게 하면 문법오류 뜸
+요렇게 하면 문법오류 뜸 왜ㅐㅐ애ㅐㅐㅐ???????
 var slideIndex = [
   document.getElementById('slide1'),
   document.getElementById('slide2'),
@@ -41,7 +41,6 @@ setInterval(function() {
     slideIndex[1].className = slideIndex[2].className
     slideIndex[2].className = slideIndex[3].className
     slideIndex[3].className = temp;
-
 }, 6000);
 
 //div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
@@ -63,12 +62,25 @@ child[3] = pagination.childNodes.item(3);
 
 function pagination() {
   var i = 0;
-  if ( slideIndex[i].className == 'on', i < slideIndex.length, i++ ) {
-    child[i].className += " "+on;
+  i == index[y];
+  if ( slideIndex[i].className == 'slide on', i < slideIndex.length, i++ ) {
+    child[i].className += " "+"on";
   };
 };
-// pagination 함수를 setInterval 함수 안에 넣으면?
 
+// pagination 함수를 setInterval 함수 안에 넣으면? 그래도 안돼
+/* data-index ?
+var y = 0;
+y < child.length;
+y++;
+var index = [];
+index[0] = child[0].getAttribute("data-index");
+index[1] = child[1].getAttribute("data-index");
+index[2] = child[2].getAttribute("data-index");
+index[3] = child[3].getAttribute("data-index");
+
+i == index[y];
+*/
 
 /*
 1. 클래스네임이 on 인 슬라이드인덱스를 찾아서
@@ -85,4 +97,8 @@ if(slideIndex[i] == x) {
 };
 */
 
-//
+/*
+var x = slideIndex.find(function() {
+    return slideIndex.className == 'on';
+});
+*/
