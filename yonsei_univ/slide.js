@@ -41,6 +41,7 @@ setInterval(function() {
     slideIndex[1].className = slideIndex[2].className
     slideIndex[2].className = slideIndex[3].className
     slideIndex[3].className = temp;
+
 }, 6000);
 
 //div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
@@ -58,14 +59,30 @@ child[3] = pagination.childNodes.item(3);
 
 //html 파일에서 <ul>과 <li>, </li>와 </ul> 사이의 공백을 인식해서
 //#text 라는 자식노드가 자동 생성되는데 공백을 없애지 않고도 없앨 수 있는 방법이 있나?
-function toggleClass(element, className) {
+
+
+function pagination() {
   var i = 0;
-  if ( slideIndex[i].className === 'slide on' ) {
-    child[i].className('on');
+  if ( slideIndex[i].className == 'on', i < slideIndex.length, i++ ) {
+    child[i].className += " "+on;
   };
 };
+// pagination 함수를 setInterval 함수 안에 넣으면?
+
+
 /*
 1. 클래스네임이 on 인 슬라이드인덱스를 찾아서
 2. 인덱스 [i]를 변수에 담고
 3. child[i]의 클래스 on add
 */
+
+/*
+var i = 0;
+var x = document.getElementsByClassName("slide on");
+
+if(slideIndex[i] == x) {
+  child[i].className += " "+on;
+};
+*/
+
+//
