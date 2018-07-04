@@ -45,10 +45,10 @@ let slide = () => {
 setInterval(function() {
     let temp = slideIndex[0].className;
     //console.log(slideIndex[0].className);
-    slideIndex[0].className = slideIndex[1].className
-    slideIndex[1].className = slideIndex[2].className
-    slideIndex[2].className = slideIndex[3].className
-    slideIndex[3].className = temp;
+    slideIndex[0].className = slideIndex[3].className
+    slideIndex[3].className = slideIndex[2].className
+    slideIndex[2].className = slideIndex[1].className
+    slideIndex[1].className = temp;
 
     let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
     //console.log(findSlide);
@@ -63,7 +63,7 @@ setInterval(function() {
     // 현재 slide의 circle의 style을 채운다
     slideCircleGroup[findIndex].className = 'on';
 
-}, 1000);
+}, 6000);
 
 //div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
 //그 인덱스의 pagination > li에 클래스 on을 붙여준다.
@@ -98,15 +98,15 @@ pagination.childNodes.forEach(node => {
 //console.log(child);
 
 //html 파일에서 <ul>과 <li>, </li>와 </ul> 사이의 공백을 인식해서
-//#text 라는 자식노드가 자동 생성되는데 공백을 없애지 않고도 없앨 수 있는 방법이 있나?
-
+//#text 라는 자식노드가 자동 생성되는데 공백을 없애지 않고도 없앨 수 있는 방법이 있나? - forEach
+/*
 function pagination() {
   var i = 0;
   i == index[y];
   if ( slideIndex[i].className == 'slide on', i < slideIndex.length, i++ ) {
     child[i].className += " "+"on";
   };
-};
+*/
 
 // pagination 함수를 setInterval 함수 안에 넣으면? 그래도 안돼
 /* data-index ?
@@ -142,3 +142,13 @@ var x = slideIndex.find(function() {
     return slideIndex.className == 'on';
 });
 */
+
+
+//slideGroup 의 li 클릭했을 때 해당되는 슬라이드로 이동하는 스크립트
+var clickLi = document.getElementsByClassName('pageLi');
+//console.log(clickLi);
+clickLi.onclick = function() {FindSlidePage()};
+var FindSlidePage = function() {
+  let clickIndex = slideCircleGroup.indexOf(this);
+  console.log(clickIndex);
+};
