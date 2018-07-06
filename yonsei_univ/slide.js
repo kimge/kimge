@@ -145,10 +145,16 @@ var x = slideIndex.find(function() {
 
 
 //slideGroup 의 li 클릭했을 때 해당되는 슬라이드로 이동하는 스크립트
+
+function FindSlidePage(event) {
+  // let target = event.currentTarget;
+  // let clickIndex = indexOf(target);
+  // console.log(clickIndex);
+  var evt = new clickEvent('click', {
+  alert(hi)
+  };
+};
+
 var clickLi = document.getElementsByClassName('pageLi');
 //console.log(clickLi);
-clickLi.onclick = function() {FindSlidePage()};
-var FindSlidePage = function() {
-  let clickIndex = slideCircleGroup.indexOf(this);
-  console.log(clickIndex);
-};
+FindSlidePage(clickLi);
