@@ -145,16 +145,48 @@ var x = slideIndex.find(function() {
 
 
 //slideGroup 의 li 클릭했을 때 해당되는 슬라이드로 이동하는 스크립트
+// var clickLi = document.getElementsByClassName('pageLi');
+// console.log(clickLi);
 
-function FindSlidePage(event) {
-  // let target = event.currentTarget;
-  // let clickIndex = indexOf(target);
-  // console.log(clickIndex);
-  var evt = new clickEvent('click', {
-  alert(hi)
-  };
+// clickLi.addEventListener("click", clickEvent); // li를 클릭했을 때 clickEvent 함수를 불러오기
+// typeError 발생,  addEventListener is not a funciton
+for (var x = 0; x < slideCircleGroup.length; x += 1) {
+  slideCircleGroup[x].onclick = function() {
+      var clickLi = slideCircleGroup.indexOf(this);
+      let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
+      //console.log(findCircle);
+
+      // 바로 직전 circle을 비우고
+      findCircle.className = '';
+
+      // 현재 slide의 circle의 style을 채운다
+      slideCircleGroup[clickLi].className = 'on';
+
+      // 슬라이드 이미지
+      let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+
+      // 클릭된 li 인덱스의 슬라이드의 클래스네임을 비우고
+      slideIndex.className = '';
+      //바꾼다
+      slideIndex[clickLi].className = 'slide on';
+
+      if (clickLi == 0) {
+        slideIndex[clickLi+1].className = 'slide next';
+        slideIndex[clickLi+2].className = 'slide hide';
+        slideIndex[clickLi+3].className = 'slide prev';
+      } else if (clickLi == 1) {
+        slideIndex[clickLi+1].className = 'slide next';
+        slideIndex[clickLi+2].className = 'slide hide';
+        slideIndex[clickLi-1].className = 'slide prev';
+      } else if (clickLi == 2) {
+        slideIndex[clickLi+1].className = 'slide next';
+        slideIndex[clickLi-2].className = 'slide hide';
+        slideIndex[clickLi-1].className = 'slide prev';
+      } else if (clickLi == 3) {
+        slideIndex[clickLi-3].className = 'slide next';
+        slideIndex[clickLi-2].className = 'slide hide';
+        slideIndex[clickLi-1].className = 'slide prev';
+      }
+
+  }
 };
-
-var clickLi = document.getElementsByClassName('pageLi');
-//console.log(clickLi);
-FindSlidePage(clickLi);
