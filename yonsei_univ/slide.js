@@ -205,5 +205,4 @@ prev.onclick = function() {
       // 현재 이미지의 인덱스를 찾는다
       //let currentSlide = slideIndex.indexOf(findSlide);
       //console.log(findSlide);
-
 };
