@@ -41,8 +41,8 @@ let slide = () => {
   //클래스네임을 여러 개 설정하고 그 중 특정 클래스네임을 가져올 수는 없나
 };
 */
-
-setInterval(function() {
+var slideInterval = setInterval(startInterval, 6000);
+function startInterval() {
     let temp = slideIndex[0].className;
     //console.log(slideIndex[0].className);
     slideIndex[0].className = slideIndex[3].className
@@ -62,8 +62,7 @@ setInterval(function() {
     findCircle.className = '';
     // 현재 slide의 circle의 style을 채운다
     slideCircleGroup[findIndex].className = 'on';
-
-}, 6000);
+};
 
 //div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
 //그 인덱스의 pagination > li에 클래스 on을 붙여준다.
@@ -189,4 +188,22 @@ for (var x = 0; x < slideCircleGroup.length; x += 1) {
       }
 
   }
+};
+
+// slide pause / start function
+function pauseInterval() {
+    clearInterval(slideInterval);
+}
+
+// slide prev / next function
+var prev = document.getElementsByClassName('btn_prev');
+var next = document.getElementsByClassName('btn_next');
+// console.log(prev);
+
+
+prev.onclick = function() {
+      // 현재 이미지의 인덱스를 찾는다
+      //let currentSlide = slideIndex.indexOf(findSlide);
+      //console.log(findSlide);
+
 };
