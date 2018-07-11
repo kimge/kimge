@@ -151,7 +151,7 @@ var x = slideIndex.find(function() {
 // typeError 발생,  addEventListener is not a funciton
 for (var x = 0; x < slideCircleGroup.length; x += 1) {
   slideCircleGroup[x].onclick = function() {
-      var clickLi = slideCircleGroup.indexOf(this);
+      let clickLi = slideCircleGroup.indexOf(this);
       let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
       //console.log(findCircle);
 
@@ -202,7 +202,12 @@ var next = document.getElementsByClassName('btn_next');
 
 
 prev.onclick = function() {
+
+      // 슬라이드의 현재 이미지
+      let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+      // console.log(findSlide);
+
       // 현재 이미지의 인덱스를 찾는다
-      //let currentSlide = slideIndex.indexOf(findSlide);
-      //console.log(findSlide);
+      // let currentSlide = slideIndex.indexOf(findSlide);
+      // console.log(findSlide);
 };
