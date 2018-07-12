@@ -238,6 +238,90 @@
 	max-width: 849px;
 	margin-top: 43px;
 }
+.research {
+	position: relative;
+	overflow: hidden;
+}
+.research > .inner > ul {
+	height: 300px;
+	position: relative;
+}
+.research > .inner > ul > li {
+	display: none;
+	padding-left: 291px;
+	float: left;
+	width: 558px;
+	height: 100%;
+}
+.research > .inner > ul > li.on {
+	display: block;
+}
+.research .sub_slide_wrap li a .img {
+	position: absolute;
+  top: 0;
+  left: 0;
+	width: 364px;
+	height: 255px;
+}
+.research .inner .sub_slide_wrap li .txt {
+	overflow: hidden;
+	width: 558px;
+	height: 100%;
+	padding:28px 30px 76px 105px;
+	color: #fff;
+	background: #0067b3 url(images/bg_spotlites.png) no-repeat 100% 100%;
+}
+.research .inner .sub_slide_wrap li .txt > * {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.research .inner .sub_slide_wrap li .txt strong {
+	font-size: 30px;
+	max-height: 2.4em;
+	overflow: hidden;
+	line-height: 1.2em;
+	color: #fff;
+}
+.research .inner .sub_slide_wrap li .txt span {
+	height: 1.714em;
+	margin:12px 0 16px;
+	white-space: nowrap;
+}
+.research .inner .sub_slide_wrap li .txt p {
+	height: 5.142em;
+}
+.research button {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.research button.next {
+	left:  24px;
+}
+.research .pagination {
+	position: absolute;
+	z-index: 10;
+	overflow: hidden;
+	left: 393px;
+	bottom: 28px;
+}
+.research .pagination li {
+	float: left;
+	margin-left: 1px;
+}
+.research .pagination li a {
+	display: block;
+	text-indent: -9999px;
+	font-size: 0;
+	width: 12px;
+	height: 12px;
+	background: url(images/bul_issue.png) no-repeat 50% 50%;
+}
+.research .pagination li.on a {
+	background: url(images/bul_issue_on.png) no-repeat 50% 50%;
+}
 .sympathy {
 	position: relative;
 	padding-bottom: 24px;
@@ -453,4 +537,59 @@
 }
 .explore li:hover a {
 	text-decoration: underline;
+}
+.quick {
+	position: absolute;
+}
+#container > .quick > .inner {
+	position: fixed;
+	top:10px;
+	right: 13%;
+	margin-left: -610px;
+	margin-top: 0;
+}
+.quick .menu {
+}
+.quick .menu li {
+	position: relative;
+	margin-top: 1px;
+}
+.quick .menu li:first-child {
+	margin-top: 0;
+}
+.quick .menu li a {
+	display: block;
+	padding-top: 38px;
+	width: 60px;
+	height: 80px;
+	font-size: 13px;
+	line-height: 15px;
+	color: #737373;
+	text-align: center;
+	background: #f2f2f2 url(images/bul_quick.png) no-repeat 0 0;
+}
+.quick .menu li.q1 a {
+	background-position: 0 0;
+}
+.quick .menu li.q2 a {
+	background-position: 0 -81px;
+}
+.quick .menu li.q3 a {
+	background-position: 0 -162px;
+}
+.quick .menu li.q4 a {
+	background-position: 0 -243px;
+}
+.quick .menu li.q5 a {
+	background-position: 0 -324px;
+}
+.quick .qwrap {
+	display: none;
+}
+.quick .btn_qclose {
+	display: none;
+}
+.quick .btn_qclose button {
+	width: 60px;
+	height: 80px;
 }
