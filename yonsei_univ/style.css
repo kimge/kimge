@@ -16,11 +16,11 @@
 	top: 205px;
 	z-index: 20;
 }
-#issue > button.btn_prev {
+#issue > button#btn_prev {
 	left: 50%;
 	margin-left: -646px;
 }
-#issue > button.btn_next {
+#issue > button#btn_next {
 	right: 50%;
 	margin-right: -646px;
 }

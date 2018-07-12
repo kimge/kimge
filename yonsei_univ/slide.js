@@ -42,8 +42,6 @@ let slide = () => {
 };
 */
 
-// 슬라이드의 현재 이미지
-let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
 
 var slideInterval = setInterval(startInterval, 6000);
 function startInterval() {
@@ -54,7 +52,7 @@ function startInterval() {
     slideIndex[2].className = slideIndex[1].className
     slideIndex[1].className = temp;
 
-    //let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+    let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
     //console.log(findSlide);
     //console.log(slideIndex.indexOf(findSlide));
     let findIndex = slideIndex.indexOf(findSlide);
@@ -155,7 +153,7 @@ var x = slideIndex.find(function() {
 // typeError 발생,  addEventListener is not a funciton
 for (var x = 0; x < slideCircleGroup.length; x += 1) {
   slideCircleGroup[x].onclick = function() {
-      let clickLi = slideCircleGroup.indexOf(this);
+      var clickLi = slideCircleGroup.indexOf(this);
       let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
       //console.log(findCircle);
 
@@ -166,7 +164,7 @@ for (var x = 0; x < slideCircleGroup.length; x += 1) {
       slideCircleGroup[clickLi].className = 'on';
 
       // 슬라이드 이미지
-      // let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+      let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
 
       // 클릭된 li 인덱스의 슬라이드의 클래스네임을 비우고
       slideIndex.className = '';
@@ -200,25 +198,28 @@ function pauseInterval() {
 }
 
 // slide prev / next function
-var prev = document.getElementsByClassName('btn_prev');
-var next = document.getElementsByClassName('btn_next');
+let prev = document.getElementById('btn_prev');
+let next = document.getElementById('btn_next');
 // console.log(prev);
 
 prev.onclick = function() {
+      // alert('hi');
 
       // 슬라이드의 현재 이미지
       let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
       // console.log(findSlide);
+      // alert(findSlide.id);
 
       // 현재 이미지의 인덱스를 찾는다
       let currentSlide = slideIndex.indexOf(findSlide);
       // console.log(currentSlide);
-
+      alert(currenSlide);
       // 해당 슬라이드의 클래스네임을 비우고
       // slideIndex[currentSlide].className = '';
       //바꾼다
-      slideIndex[currentSlide].className = 'slide on';
+      // slideIndex[currentSlide].className = 'slide on';
 
+      /*
       if (currentSlide == 0) {
           slideIndex[currentSlide+1].className = 'slide next';
           slideIndex[currentSlide+2].className = 'slide hide';
@@ -236,5 +237,6 @@ prev.onclick = function() {
           slideIndex[currentSlide-2].className = 'slide hide';
           slideIndex[currentSlide-1].className = 'slide prev';
       }
+      */
 
 };
