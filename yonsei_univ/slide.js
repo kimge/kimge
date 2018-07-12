@@ -41,6 +41,10 @@ let slide = () => {
   //클래스네임을 여러 개 설정하고 그 중 특정 클래스네임을 가져올 수는 없나
 };
 */
+
+// 슬라이드의 현재 이미지
+let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+
 var slideInterval = setInterval(startInterval, 6000);
 function startInterval() {
     let temp = slideIndex[0].className;
@@ -50,7 +54,7 @@ function startInterval() {
     slideIndex[2].className = slideIndex[1].className
     slideIndex[1].className = temp;
 
-    let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+    //let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
     //console.log(findSlide);
     //console.log(slideIndex.indexOf(findSlide));
     let findIndex = slideIndex.indexOf(findSlide);
@@ -162,7 +166,7 @@ for (var x = 0; x < slideCircleGroup.length; x += 1) {
       slideCircleGroup[clickLi].className = 'on';
 
       // 슬라이드 이미지
-      let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+      // let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
 
       // 클릭된 li 인덱스의 슬라이드의 클래스네임을 비우고
       slideIndex.className = '';
@@ -200,7 +204,6 @@ var prev = document.getElementsByClassName('btn_prev');
 var next = document.getElementsByClassName('btn_next');
 // console.log(prev);
 
-
 prev.onclick = function() {
 
       // 슬라이드의 현재 이미지
@@ -208,6 +211,30 @@ prev.onclick = function() {
       // console.log(findSlide);
 
       // 현재 이미지의 인덱스를 찾는다
-      // let currentSlide = slideIndex.indexOf(findSlide);
-      // console.log(findSlide);
+      let currentSlide = slideIndex.indexOf(findSlide);
+      // console.log(currentSlide);
+
+      // 해당 슬라이드의 클래스네임을 비우고
+      // slideIndex[currentSlide].className = '';
+      //바꾼다
+      slideIndex[currentSlide].className = 'slide on';
+
+      if (currentSlide == 0) {
+          slideIndex[currentSlide+1].className = 'slide next';
+          slideIndex[currentSlide+2].className = 'slide hide';
+          slideIndex[currentSlide+3].className = 'slide prev';
+      } else if (currentSlide == 1) {
+          slideIndex[currentSlide+1].className = 'slide next';
+          slideIndex[currentSlide+2].className = 'slide hide';
+          slideIndex[currentSlide-1].className = 'slide prev';
+      } else if (currentSlide == 2) {
+          slideIndex[currentSlide+1].className = 'slide next';
+          slideIndex[currentSlide-2].className = 'slide hide';
+          slideIndex[currentSlide-1].className = 'slide prev';
+      } else if (currentSlide == 3) {
+          slideIndex[currentSlide-3].className = 'slide next';
+          slideIndex[currentSlide-2].className = 'slide hide';
+          slideIndex[currentSlide-1].className = 'slide prev';
+      }
+
 };
