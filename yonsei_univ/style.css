@@ -539,7 +539,7 @@
 	text-decoration: underline;
 }
 .quick {
-	position: absolute;
+	position: relative;
 }
 #container > .quick > .inner {
 	position: fixed;
@@ -549,10 +549,12 @@
 	margin-top: 0;
 }
 .quick .menu {
+	position: relative;
 }
-.quick .menu li {
+.quick .menu > li {
 	position: relative;
 	margin-top: 1px;
+	z-index: 2;
 }
 .quick .menu li:first-child {
 	margin-top: 0;
@@ -568,6 +570,7 @@
 	text-align: center;
 	background: #f2f2f2 url(images/bul_quick.png) no-repeat 0 0;
 }
+
 .quick .menu li.q1 a {
 	background-position: 0 0;
 }
@@ -584,12 +587,52 @@
 	background-position: 0 -324px;
 }
 .quick .qwrap {
-	display: none;
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 0;
+}
+.quick .qwrap.on {
+	width: 554px;
+}
+.qwrap .detail {
+	position: absolute;
+	top: 0;
+	right: 60px;
+	width: 487px;
+  min-height: 16px;
+  padding: 30px 0 30px 30px;
+  border: 2px solid #0067b3;
+  background-color: #fff;
+}
+.qwrap .menu_detail {
+	overflow: hidden;
+}
+.qwrap .menu_detail li {
+	float: left;
+	width: 150px;
+	padding-left: 11px;
+	background: url(images/bul_ractangle.png) no-repeat 0 12px;
+	line-height: 1.9;
 }
 .quick .btn_qclose {
 	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #0067b3;
+	width: 60px;
+	height: 80px;
+	text-align: center;
+}
+.quick .btn_qclose.on {
+	display: block;
 }
 .quick .btn_qclose button {
 	width: 60px;
 	height: 80px;
+}
+.quick .btn_qclose button img {
+	width:21px;
+	height: 21px;
 }

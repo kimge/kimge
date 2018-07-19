@@ -19,13 +19,9 @@ $(function() {
     event.preventDefault();
     $('.familysites').toggleClass('on');
   });
-
-//  $('.close').on('click', function() {
-//    $('.gnb > li').removeClass('on');
-//  });
-//  $(function() {
-  //  var windowWidth = $( window ).width();
-    //if(windowWidth < 600) {
-      //$('#campus > a').removeClass('blind');
-  //});
+  $('.menu > li').on('click', function(e) {
+    event.preventDefault();
+    $(this).children().toggleClass('on');
+  // console.log(a);
+  });
 });
