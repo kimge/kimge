@@ -28,12 +28,21 @@ $(function() {
 
   $(document).ready(function() {
     /* quick menu */
+    var scrollTop = $('html').scrollTop();
+    // console.log(scrollTop);
     var con_offset = $('#container').offset().top;
     // console.log(con_offset);
+    if ( scrollTop < 300) {
+      scrollTop = 300;
+    }
     $(".quick").animate( { "top": con_offset + 50 +"px" }, 500 );
     $(window).scroll(function(){
       $('.quick').stop();
-      $('.quick').animate( { "top": con_offset - 200 + "px" }, 1000 );
+      $('.quick').animate( { "top": scrollTop + "px" }, 1000 );
     });
+  });
+
+  $('#top').on('click', function() {
+    $('html, body').animate({scrollTop: $('body').offset().top}, speed)
   });
 });
