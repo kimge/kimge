@@ -42,29 +42,38 @@ let slide = () => {
 };
 */
 
+let slideInterval = null;
 
-var slideInterval = setInterval(startInterval, 6000);
+// slide pause / start function
+function pauseInterval() {
+    clearInterval(slideInterval);
+}
+
 function startInterval() {
-    let temp = slideIndex[0].className;
-    //console.log(slideIndex[0].className);
-    slideIndex[0].className = slideIndex[3].className
-    slideIndex[3].className = slideIndex[2].className
-    slideIndex[2].className = slideIndex[1].className
-    slideIndex[1].className = temp;
+   slideInterval = setInterval(() => {
+       let temp = slideIndex[0].className;
+       //console.log(slideIndex[0].className);
+       slideIndex[0].className = slideIndex[3].className
+       slideIndex[3].className = slideIndex[2].className
+       slideIndex[2].className = slideIndex[1].className
+       slideIndex[1].className = temp;
 
-    let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
-    //console.log(findSlide);
-    //console.log(slideIndex.indexOf(findSlide));
-    let findIndex = slideIndex.indexOf(findSlide);
+       let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+       //console.log(findSlide);
+       //console.log(slideIndex.indexOf(findSlide));
+       let findIndex = slideIndex.indexOf(findSlide);
 
-    let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
-    //console.log(findCircle);
+       let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
+       //console.log(findCircle);
 
-    // 바로 직전 circle을 비우고
-    findCircle.className = '';
-    // 현재 slide의 circle의 style을 채운다
-    slideCircleGroup[findIndex].className = 'on';
-};
+       // 바로 직전 circle을 비우고
+       findCircle.className = '';
+       // 현재 slide의 circle의 style을 채운다
+       slideCircleGroup[findIndex].className = 'on';
+   }, 1000);
+}
+
+startInterval();
 
 //div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
 //그 인덱스의 pagination > li에 클래스 on을 붙여준다.
@@ -191,11 +200,6 @@ for (var x = 0; x < slideCircleGroup.length; x += 1) {
 
   }
 };
-
-// slide pause / start function
-function pauseInterval() {
-    clearInterval(slideInterval);
-}
 
 // slide prev / next function
 let prev = document.getElementById('btn_prev');
