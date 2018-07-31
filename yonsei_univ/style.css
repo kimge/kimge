@@ -539,13 +539,12 @@
 	text-decoration: underline;
 }
 .quick {
-	position: relative;
+	position: fixed;
+	top:0;
+	left: 50%;
+	margin-left: 610px;
 }
 #container > .quick > .inner {
-	position: fixed;
-	top:10px;
-	right: 13%;
-	margin-left: -610px;
 	margin-top: 0;
 }
 .quick .menu {
@@ -559,7 +558,7 @@
 .quick .menu li:first-child {
 	margin-top: 0;
 }
-.quick .menu li a {
+.quick .menu > li > a {
 	display: block;
 	padding-top: 38px;
 	width: 60px;
@@ -587,26 +586,22 @@
 	background-position: 0 -324px;
 }
 .quick .qwrap {
-	position: relative;
-	top: 0;
-	right: 0;
-	width: 0;
-}
-.quick .qwrap.on {
-	width: 554px;
-}
-.qwrap .detail {
 	position: absolute;
 	top: 0;
 	right: 60px;
+	width: 0;
+	display: none;
+}
+.quick .qwrap.on {
+	width: 554px;
+	display: block;
+}
+.qwrap .detail {
 	width: 487px;
   min-height: 16px;
   padding: 30px 0 30px 30px;
   border: 2px solid #0067b3;
   background-color: #fff;
-}
-.qwrap .menu_detail {
-	overflow: hidden;
 }
 .qwrap .menu_detail li {
 	float: left;
@@ -614,6 +609,9 @@
 	padding-left: 11px;
 	background: url(images/bul_ractangle.png) no-repeat 0 12px;
 	line-height: 1.9;
+}
+.qwrap .menu_detail li a {
+	color: #4c4c4c;
 }
 .quick .btn_qclose {
 	display: none;

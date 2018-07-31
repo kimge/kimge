@@ -21,7 +21,19 @@ $(function() {
   });
   $('.menu > li').on('click', function(e) {
     event.preventDefault();
-    $(this).children().toggleClass('on');
+    $(this).find('.qwrap').toggleClass('on');
+    $(this).find('.btn_qclose').toggleClass('on');
   // console.log(a);
+  });
+
+  $(document).ready(function() {
+    /* quick menu */
+    var con_offset = $('#container').offset().top;
+    // console.log(con_offset);
+    $(".quick").animate( { "top": con_offset + 50 +"px" }, 500 );
+    $(window).scroll(function(){
+      $('.quick').stop();
+      $('.quick').animate( { "top": con_offset - 200 + "px" }, 1000 );
+    });
   });
 });
