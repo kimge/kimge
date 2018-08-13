@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Yonsei University</title>
-
+  <link rel="stylesheet" href="media_query.css">
   <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="style.css">
 
@@ -21,7 +21,10 @@
       <div class="top_menu group">
         <div class="inner">
           <div id="campus">
-            <a class="hidden" href="index.html">신촌·국제</a>
+            <a class="hidden" href="index.html">
+              신촌·국제
+              <span></span>
+            </a>
             <ul class="group">
               <li>
                 <h2>신촌·국제
@@ -349,10 +352,10 @@
     <div id="slideWrap">
       <div id="issue">
         <h2 class="blind">YONSEI ISSUE</h2>
-        <button id="btn_prev">
+        <button id="btn_prev" onclick="btn_prev()">
           <img src="images/btn_prev.png" alt="이전으로 가기">
         </button>
-        <button id="btn_next">
+        <button id="btn_next" onclick="btn_next()">
           <img src="images/btn_next.png" alt="다음으로 가기">
         </button>
         <div class="inner">

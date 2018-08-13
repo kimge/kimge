@@ -114,6 +114,16 @@ img {
 #campus {
 	float: left;
 }
+#campus > a {
+	color: #fff;
+	font-size: 14px;
+	height: 35px;
+	line-height: 35px;
+	padding:0;
+	text-align: center;
+	width: 100%;
+
+}
 #campus > ul {
 	width: 280px;
 	font-size: 14px;

@@ -26,19 +26,22 @@ $(function() {
   // console.log(a);
   });
 
+ // quick menu
+
   $(document).ready(function() {
-    /* quick menu */
-    var scrollTop = $('html').scrollTop();
-    // console.log(scrollTop);
-    var con_offset = $('#container').offset().top;
-    // console.log(con_offset);
-    if ( scrollTop < 300) {
-      scrollTop = 300;
-    }
-    $(".quick").animate( { "top": con_offset + 50 +"px" }, 500 );
+
+    var scrollTop = $(window).scrollTop();
+    console.log(scrollTop);
+
+    //var quickTop = parseInt($('.quick').css('top'));
+
+    // console.log(footer_offset);
     $(window).scroll(function(){
+      if (scrollTop < 600) {
+        scrollTop = 300;
+      }
       $('.quick').stop();
-      $('.quick').animate( { "top": scrollTop + "px" }, 1000 );
+      $('.quick').animate( { "top": scrollTop + "px" }, 500 );
     });
   });
 
@@ -46,3 +49,10 @@ $(function() {
     $('html, body').animate({scrollTop: $('body').offset().top}, speed)
   });
 });
+
+  function remove_class(){
+    var windowWidth = $( window ).width();
+    if(windowWidth < 1200) {
+      $('#campus > a').removeClass('hidden');
+    }
+  };

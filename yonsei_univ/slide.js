@@ -42,29 +42,33 @@ let slide = () => {
 };
 */
 
-
-var slideInterval = setInterval(startInterval, 6000);
+let slideInterval = null;
+ // slide pause / start function
+function pauseInterval() {
+    clearInterval(slideInterval);
+}
+//var slideInterval = setInterval(startInterval, 6000);
 function startInterval() {
+  slideInterval = setInterval(() => {
     let temp = slideIndex[0].className;
     //console.log(slideIndex[0].className);
     slideIndex[0].className = slideIndex[3].className
     slideIndex[3].className = slideIndex[2].className
     slideIndex[2].className = slideIndex[1].className
     slideIndex[1].className = temp;
-
-    let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+     let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
     //console.log(findSlide);
     //console.log(slideIndex.indexOf(findSlide));
     let findIndex = slideIndex.indexOf(findSlide);
-
-    let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
+     let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
     //console.log(findCircle);
-
-    // 바로 직전 circle을 비우고
+     // 바로 직전 circle을 비우고
     findCircle.className = '';
     // 현재 slide의 circle의 style을 채운다
     slideCircleGroup[findIndex].className = 'on';
-};
+  }, 6000);
+}
+startInterval();
 
 //div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
 //그 인덱스의 pagination > li에 클래스 on을 붙여준다.
@@ -192,51 +196,100 @@ for (var x = 0; x < slideCircleGroup.length; x += 1) {
   }
 };
 
-// slide pause / start function
-function pauseInterval() {
-    clearInterval(slideInterval);
-}
-
 // slide prev / next function
 let prev = document.getElementById('btn_prev');
 let next = document.getElementById('btn_next');
 // console.log(prev);
 
-prev.onclick = function() {
+function btn_prev() {
       // alert('hi');
 
       // 슬라이드의 현재 이미지
       let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
-      // console.log(findSlide);
-      // alert(findSlide.id);
+      //console.log(findSlide);
+
 
       // 현재 이미지의 인덱스를 찾는다
       let currentSlide = slideIndex.indexOf(findSlide);
-      // console.log(currentSlide);
-      alert(currenSlide);
+      //console.log(currentSlide);
+
       // 해당 슬라이드의 클래스네임을 비우고
-      // slideIndex[currentSlide].className = '';
+      findSlide.className = '';
       //바꾼다
-      // slideIndex[currentSlide].className = 'slide on';
+      findSlide.className = 'slide next';
 
-      /*
+
       if (currentSlide == 0) {
-          slideIndex[currentSlide+1].className = 'slide next';
-          slideIndex[currentSlide+2].className = 'slide hide';
-          slideIndex[currentSlide+3].className = 'slide prev';
+          slideIndex[currentSlide+1].className = 'slide hide';
+          slideIndex[currentSlide+2].className = 'slide prev';
+          slideIndex[currentSlide+3].className = 'slide on';
       } else if (currentSlide == 1) {
-          slideIndex[currentSlide+1].className = 'slide next';
-          slideIndex[currentSlide+2].className = 'slide hide';
-          slideIndex[currentSlide-1].className = 'slide prev';
+          slideIndex[currentSlide+1].className = 'slide hide';
+          slideIndex[currentSlide+2].className = 'slide prev';
+          slideIndex[currentSlide-1].className = 'slide on';
       } else if (currentSlide == 2) {
-          slideIndex[currentSlide+1].className = 'slide next';
-          slideIndex[currentSlide-2].className = 'slide hide';
-          slideIndex[currentSlide-1].className = 'slide prev';
+          slideIndex[currentSlide+1].className = 'slide hide';
+          slideIndex[currentSlide-2].className = 'slide prev';
+          slideIndex[currentSlide-1].className = 'slide on';
       } else if (currentSlide == 3) {
-          slideIndex[currentSlide-3].className = 'slide next';
-          slideIndex[currentSlide-2].className = 'slide hide';
-          slideIndex[currentSlide-1].className = 'slide prev';
+          slideIndex[currentSlide-3].className = 'slide hide';
+          slideIndex[currentSlide-2].className = 'slide prev';
+          slideIndex[currentSlide-1].className = 'slide on';
       }
-      */
 
+      for (var y = 0; y < slideCircleGroup.length; y += 1) {
+
+        let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+        let currentSlide = slideIndex.indexOf(findSlide);
+
+        let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
+        //console.log(findCircle);
+
+        // 바로 직전 circle을 비우고
+        findCircle.className = '';
+
+        // 현재 slide의 circle의 style을 채운다
+        slideCircleGroup[currentSlide].className = 'on';
+
+      }
+};
+function btn_next() {
+      let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+      let currentSlide = slideIndex.indexOf(findSlide);
+
+      findSlide.className = '';
+      findSlide.className = 'slide prev';
+
+      if (currentSlide == 0) {
+          slideIndex[currentSlide+1].className = 'slide on';
+          slideIndex[currentSlide+2].className = 'slide next';
+          slideIndex[currentSlide+3].className = 'slide hide';
+      } else if (currentSlide == 1) {
+          slideIndex[currentSlide+1].className = 'slide on';
+          slideIndex[currentSlide+2].className = 'slide next';
+          slideIndex[currentSlide-1].className = 'slide hide';
+      } else if (currentSlide == 2) {
+          slideIndex[currentSlide+1].className = 'slide on';
+          slideIndex[currentSlide-2].className = 'slide next';
+          slideIndex[currentSlide-1].className = 'slide hide';
+      } else if (currentSlide == 3) {
+          slideIndex[currentSlide-3].className = 'slide on';
+          slideIndex[currentSlide-2].className = 'slide next';
+          slideIndex[currentSlide-1].className = 'slide hide';
+      }
+      for (var y = 0; y < slideCircleGroup.length; y += 1) {
+
+        let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
+        let currentSlide = slideIndex.indexOf(findSlide);
+
+        let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
+        //console.log(findCircle);
+
+        // 바로 직전 circle을 비우고
+        findCircle.className = '';
+
+        // 현재 slide의 circle의 style을 채운다
+        slideCircleGroup[currentSlide].className = 'on';
+
+      }
 };

@@ -179,6 +179,7 @@
 }
 /* container */
 #container {
+	position: relative;
 	padding:46px 90px 62px 0;
 	line-height: 1.71;
 	font-size: 14px;
@@ -540,7 +541,7 @@
 }
 .quick {
 	position: fixed;
-	top:0;
+	top : 50px;
 	left: 50%;
 	margin-left: 610px;
 }
