@@ -43,7 +43,6 @@ let slide = () => {
 */
 
 let slideInterval = null;
-<<<<<<< HEAD
  // slide pause / start function
 function pauseInterval() {
     clearInterval(slideInterval);
@@ -61,7 +60,7 @@ function startInterval() {
     //console.log(findSlide);
     //console.log(slideIndex.indexOf(findSlide));
     let findIndex = slideIndex.indexOf(findSlide);
-     let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
+    let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
     //console.log(findCircle);
      // 바로 직전 circle을 비우고
     findCircle.className = '';
@@ -69,38 +68,6 @@ function startInterval() {
     slideCircleGroup[findIndex].className = 'on';
   }, 6000);
 }
-=======
-
-// slide pause / start function
-function pauseInterval() {
-    clearInterval(slideInterval);
-}
-
-function startInterval() {
-   slideInterval = setInterval(() => {
-       let temp = slideIndex[0].className;
-       //console.log(slideIndex[0].className);
-       slideIndex[0].className = slideIndex[3].className
-       slideIndex[3].className = slideIndex[2].className
-       slideIndex[2].className = slideIndex[1].className
-       slideIndex[1].className = temp;
-
-       let findSlide = slideIndex.find(slide => {return slide.className.includes('on');});
-       //console.log(findSlide);
-       //console.log(slideIndex.indexOf(findSlide));
-       let findIndex = slideIndex.indexOf(findSlide);
-
-       let findCircle = slideCircleGroup.find(function(circle) { return circle.className.includes('on'); });
-       //console.log(findCircle);
-
-       // 바로 직전 circle을 비우고
-       findCircle.className = '';
-       // 현재 slide의 circle의 style을 채운다
-       slideCircleGroup[findIndex].className = 'on';
-   }, 1000);
-}
-
->>>>>>> 3efef93edc1eae8fc9978f099e2a80a238f8c265
 startInterval();
 
 //div.slide 에 on 클래스가 붙으면 그 요소의 slideIndex[]를 찾아서
