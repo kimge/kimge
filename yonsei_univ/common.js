@@ -26,7 +26,7 @@ $(function() {
   // console.log(a);
   });
 
- // quick menu
+  // quick menu
 
   $(document).ready(function() {
 
@@ -48,11 +48,15 @@ $(function() {
   $('#top').on('click', function() {
     $('html, body').animate({scrollTop: $('body').offset().top}, speed)
   });
-});
 
-  function remove_class(){
-    var windowWidth = $( window ).width();
-    if(windowWidth < 1200) {
+  $(window).resize(function (){
+    // width값을 가져오기
+    var width_size = window.outerWidth;
+
+    // 1200 이하인지 if문으로 확인
+    if (width_size <= 1200) {
       $('#campus > a').removeClass('hidden');
+      $('.m_gnb_wrap').removeClass('hidden');
     }
-  };
+  });
+});
