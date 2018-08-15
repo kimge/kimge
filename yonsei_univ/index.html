@@ -21,9 +21,7 @@
       <div class="top_menu group">
         <div class="inner">
           <div id="campus">
-            <a class="hidden" href="index.html">신촌·국제
-              <span class="ico"></span>
-            </a>
+            <a class="hidden" href="#">신촌·국제<span class="ico"></span></a>
             <ul class="group">
               <li>
                 <h2>신촌·국제
@@ -39,7 +37,7 @@
               </li>
             </ul>
           </div>
-          <div id="util">
+          <div id="util" class="toggle">
             <a class="hidden" href="#">
               <span class="ico">유틸메뉴 열기</span>
             </a>
@@ -270,7 +268,7 @@
                 <div class="inner">
                   <ul>
                     <li>
-                      <a href="#">학사정보</a>
+                      <a href="#">학사정보<span></span></a>
                       <ul>
                         <li><a href="#">학사일정</a></li>
                         <li><a href="#">학사행정</a></li>
@@ -279,7 +277,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="#">교육과정</a>
+                      <a href="#">교육과정<span></span></a>
                       <ul>
                         <li><a href="#">학점이수</a></li>
                         <li><a href="#">수강신청</a></li>
@@ -294,7 +292,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="#">등록금</a>
+                      <a href="#">등록금<span></span></a>
                       <ul>
                         <li><a href="#">등록금 일정</a></li>
                         <li><a href="#">등록금 명세표</a></li>
@@ -303,14 +301,14 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="#">장학금</a>
+                      <a href="#">장학금<span></span></a>
                       <ul>
                         <li><a href="#">장학금 안내</a></li>
                         <li><a href="#">신문고 장학금</a></li>
                       </ul>
                     </li>
                     <li>
-                      <a href="#">문의 및 서식</a>
+                      <a href="#">문의 및 서식<span></span></a>
                       <ul>
                         <li><a href="#">온라인도우미/건의함</a></li>
                         <li><a href="#">각종 신청서양식 모음</a></li>
@@ -327,16 +325,224 @@
           </ul>
         </div>
       </div>
-      <div class="m_gnb_wrap hidden">
+      <div class="m_gnb_wrap toggle hidden">
         <a href="#">
           <span class="ico">전체메뉴</span>
         </a>
-        <div>
-          <strong>전체메뉴</strong>
-          <button>전체메뉴 닫기</button>
+        <div class="lt">
+          <span>전체메뉴</span>
+          <button class="close">전체메뉴 닫기</button>
         </div>
-        <div class="mgnb">
-
+        <div id="mgnb" class="inner">
+          <ul>
+            <li class="m1 active">
+              <a href="#">연세소개</a>
+              <div>
+                <ul>
+                  <li class="hasChild">
+                    <a href="#">열린총장실<span></span></a>
+                    <ul>
+                      <li><a href="#">인사말/프로필</a></li>
+                      <li><a href="#">연설문</a></li>
+                      <li><a href="#">동정</a></li>
+                      <li><a href="#">언론인터뷰</a></li>
+                      <li><a href="#">역대총장</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">연세비전<span></span></a>
+                    <ul>
+                      <li><a href="#">3C</a></li>
+                      <li><a href="#">미래도전 10by20</a></li>
+                      <li><a href="#">건학정신,이념</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">연세연혁<span></span></a>
+                    <ul>
+                      <li><a href="#">연세의 발자취</a></li>
+                      <li><a href="#">연표</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">미디어센터<span></span></a>
+                    <ul>
+                      <li><a href="#">보도자료</a></li>
+                      <li><a href="#">사실은 이렇습니다</a></li>
+                      <li><a href="#">언론 속 연세</a></li>
+                      <li><a href="#">홍보갤러리</a></li>
+                      <li><a href="#">소셜미디어</a></li>
+                      <li><a href="#">연세포토</a></li>
+                      <li><a href="#">학생언론</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">대학현황<span></span></a>
+                    <ul>
+                      <li><a href="#">현황</a></li>
+                      <li><a href="#">평가</a></li>
+                      <li><a href="#">나눔활동</a></li>
+                      <li><a href="#">학교법인</a></li>
+                      <li><a href="#">대학평의원회</a></li>
+                      <li><a href="#">조직도</a></li>
+                      <li><a href="#">규정집</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">연세상징<span></span></a>
+                    <ul>
+                      <li><a href="#">상징</a></li>
+                      <li><a href="#">슬로건</a></li>
+                      <li><a href="#">UI</a></li>
+                      <li><a href="#">기념엠블렘</a></li>
+                      <li><a href="#">노래</a></li>
+                      <li><a href="#">구호</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">캠퍼스안내<span></span></a>
+                    <ul>
+                      <li><a href="#">캠퍼스소개</a></li>
+                      <li><a href="#">캠퍼스가이드</a></li>
+                      <li><a href="#">건물과 길</a></li>
+                      <li><a href="#">캠퍼스 견학코스 안내</a></li>
+                      <li><a href="#">캠퍼스 견학/신청</a></li>
+                      <li><a href="#">학생홍보대사</a></li>
+                      <li><a href="#">교내전화번호</a></li>
+                      <li><a href="#">교내홈페이지</a></li>
+                      <li><a href="#">학교오시는길</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="m2">
+              <a href="#">연구·산학</a>
+              <div>
+                <ul>
+                  <li><a href="#">연구활동</a></li>
+                  <li><a href="#">개발연구자성과</a></li>
+                  <li><a href="#">연구기관</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="m3">
+              <a href="#">입학·교육</a>
+              <div>
+                <ul>
+                  <li><a href="#">입학안내</a></li>
+                  <li><a href="#">대학</a></li>
+                  <li><a href="#">대학원</a></li>
+                  <li><a href="#">비학위과정</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="m4">
+              <a href="#">대학생활</a>
+              <div>
+                <ul>
+                  <li class="hasChild">
+                    <a href="#">대학공지<span></span></a>
+                    <ul>
+                      <li><a href="#">공지사항</a></li>
+                      <li><a href="#">외부기관공고</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">행정부서/기관<span></span></a>
+                    <ul>
+                      <li><a href="#">행정부서</a></li>
+                      <li><a href="#">부속기관</a></li>
+                      <li><a href="#">대학·대학원소속부속기관</a></li>
+                      <li><a href="#">부속교육기관</a></li>
+                      <li><a href="#">기타기관</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">서비스이용안내<span></span></a>
+                    <ul>
+                      <li><a href="#">IT시설</a></li>
+                      <li><a href="#">복지/체육시설</a></li>
+                      <li><a href="#">교통</a></li>
+                      <li><a href="#">편의시설</a></li>
+                      <li><a href="#">주차안내</a></li>
+                      <li><a href="#">대관 및 예약안내</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">자치활동<span></span></a>
+                    <ul>
+                      <li><a href="#">소개</a></li>
+                      <li><a href="#">연세POP</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">스마트캠퍼스<span></span></a>
+                    <ul>
+                      <li><a href="#">S-캠퍼스 소개</a></li>
+                      <li><a href="#">서비스 이용안내</a></li>
+                      <li><a href="#">학생증(신분증)</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="m5">
+              <a href="#">학사지원</a>
+              <div>
+                <ul>
+                  <li class="hasChild">
+                    <a href="#">학사정보<span></span></a>
+                    <ul>
+                      <li><a href="#">학사일정</a></li>
+                      <li><a href="#">학사행정</a></li>
+                      <li><a href="#">증명서 발급</a></li>
+                      <li><a href="#">대학요람</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">교육과정<span></span></a>
+                    <ul>
+                      <li><a href="#">학점이수</a></li>
+                      <li><a href="#">수강신청</a></li>
+                      <li><a href="#">전공신청/승인</a></li>
+                      <li><a href="#">영어인증제</a></li>
+                      <li><a href="#">유학 및 연수생</a></li>
+                      <li><a href="#">연계전공</a></li>
+                      <li><a href="#">교직과정</a></li>
+                      <li><a href="#">평생교육사과정</a></li>
+                      <li><a href="#">계절제 수업</a></li>
+                      <li><a href="#">국내대학교환프로그램</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">등록금<span></span></a>
+                    <ul>
+                      <li><a href="#">등록금 일정</a></li>
+                      <li><a href="#">등록금 명세표</a></li>
+                      <li><a href="#">등록금납부/반환</a></li>
+                      <li><a href="#">대상별 등록금 납부</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">장학금<span></span></a>
+                    <ul>
+                      <li><a href="#">장학금 안내</a></li>
+                      <li><a href="#">신문고 장학금</a></li>
+                    </ul>
+                  </li>
+                  <li class="hasChild">
+                    <a href="#">문의 및 서식<span></span></a>
+                    <ul>
+                      <li><a href="#">온라인도우미/건의함</a></li>
+                      <li><a href="#">각종 신청서양식 모음</a></li>
+                      <li><a href="#">교내 분실물 게시판</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="magazine">
@@ -931,18 +1137,12 @@
             <li><a href="#">법적고지</a></li>
             <li><a href="#">연세사회공헌</a></li>
             <li><a href="#">사이트맵</a></li>
-            <li><a href="#">윤리인권위원회</a></li>
           </ul>
+          <ul><li><a href="#">윤리인권위원회</a></li></ul>
         </div>
       </div>
       <div class="footer_wrap">
         <div class="inner group">
-          <div class="copyright">
-            <span>신촌·국제/원주 : 02-1599-1885</span>
-            <span>의료원 : 02-1599-1004</span>
-            <span>03722 서울특별시 서대문구 연세로 50 연세대학교</span>
-            <p>COPYRIGHT© 2015 YONSEI UNIV. ALL RIGHTS RESERVED.</p>
-          </div>
           <div class="related group">
             <ul class="sns group">
                 <li><a href="#"><img src="images/facebook.png" alt="facebook"></a></li>
@@ -966,6 +1166,12 @@
                   <li><a href="#">여자총동문회</a></li>
                 </ul>
               </div>
+          </div>
+          <div class="copyright">
+            <span>신촌·국제/원주 : 02-1599-1885</span>
+            <span>의료원 : 02-1599-1004</span>
+            <span>03722 서울특별시 서대문구 연세로 50 연세대학교</span>
+            <p>COPYRIGHT© 2015 YONSEI UNIV. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
       </div>

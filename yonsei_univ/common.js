@@ -56,7 +56,33 @@ $(function() {
     // 1200 이하인지 if문으로 확인
     if (width_size <= 1200) {
       $('#campus > a').removeClass('hidden');
+      $('#util > a').removeClass('hidden');
+      $('#util > div').removeClass('hidden');
       $('.m_gnb_wrap').removeClass('hidden');
     }
+  });
+
+
+  $('#campus > a').on('click', function(e) {
+    $('#campus').toggleClass('active');
+  });
+  $('.m_gnb_wrap > a').on('click', function(e) {
+    $('body').addClass('opened');
+    $('.m_gnb_wrap').addClass('active');
+  });
+  $('#util > a').on('click', function(e) {
+    $('body').addClass('opened');
+    $('#util').addClass('active');
+  });
+  $('.close').on('click', function(e) {
+    $('body').removeClass('opened');
+    $('.toggle').removeClass('active');
+  });
+  $('#mgnb ul li').on('click', function(e) {
+    $('#mgnb ul li').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('#mgnb ul li div ul li.hasChild').on('click', function(e) {
+    $(this).toggleClass('on');
   });
 });
